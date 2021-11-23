@@ -55,11 +55,11 @@ async def send(ctx):
 @bot.command()
 async def help(ctx):
     #help,test,send    
-    emBed = discord.Embed(title="All commands",description="Prefix: + \n How to use: type +COMMAND_NAME to use that command and enjoy", color=0x199f6b)
+    emBed = discord.Embed(title="All commands",description="Prefix: + \n How to use: type +COMMAND_NAME to use command and enjoy", color=0x199f6b)
     emBed.add_field(name="help",value="To get more information about a specific commands", inline = False)
-    emBed.add_field(name="test",value="Respond message that you have send", inline = False)
-    emBed.add_field(name="send",value="Send hello message to user", inline = False)
-    emBed.add_field(name="user",value="Send your username followed by hello message to user", inline = False)
+    emBed.add_field(name="credit",value="To show how much credit you have left", inline = False)
+    emBed.add_field(name="roulette",value="To earn more credit \n you can use it once a day", inline = False)
+    emBed.add_field(name="stat",value="To see your lose/win stat and your earn/lose credit stat", inline = False)
     emBed.set_thumbnail(url = "https://media.istockphoto.com/vectors/suits-of-playing-cards-icon-vector-id911680094")
     emBed.set_footer(text="Hope you enjoy!!!", icon_url = "https://media.istockphoto.com/vectors/suits-of-playing-cards-icon-vector-id911680094")
     
@@ -98,8 +98,8 @@ async def play(ctx, * , par):
 
     msg = await ctx.channel.send(embed=emBed)
     
-    emoji1 = '👍'
-    emoji2 = '👎'
+    emoji1 = '🙅‍♀️'
+    emoji2 = '🙆‍♀️'
     await msg.add_reaction(emoji1)
     await msg.add_reaction(emoji2)
 
@@ -126,17 +126,17 @@ async def play(ctx, * , par):
       test = True
       while test:
           def check(reaction, user):
-              return user == ctx.message.author and (str(reaction.emoji) == '👍' or str(reaction.emoji) == '👎')
+              return user == ctx.message.author and (str(reaction.emoji) == '🙅‍♀️' or str(reaction.emoji) == '🙆‍♀️')
                         
           reaction, user = await bot.wait_for('reaction_add', check=check)
-          if str(reaction) == '👍':
+          if str(reaction) == '🙅‍♀️':
               print("Hit")
               num = random.randint(0, len(lst_card)-1)
               lst_popp.append(lst_card.pop(num))
               score_p += lst_value.pop(num) 
               score_p %= 10
               test = False
-          elif str(reaction) == '👎':
+          elif str(reaction) == '🙆‍♀️':
               print("emoji2")
               test = False
     
@@ -241,4 +241,4 @@ async def on_message(message):
 
 
 
-bot.run("OTA5NDIyOTM4NDYwMTM1NDU0.YZEEHA.nWsu_X_dmDwqTAgvXqdXfvW7pJU")
+bot.run("OTA5NDIyOTM4NDYwMTM1NDU0.YZEEHA.kkBNZaJLf0l88FKs3vV3GY4t6zQ")
