@@ -484,4 +484,4 @@ async def credit(ctx):
     await ctx.channel.send(f"You have " + str(D_user.balance) + " now")
 
 
-bot.run("OTA5NDIyOTM4NDYwMTM1NDU0.YZEEHA.JkCopib3vqAxKZf2UYYmqj_H8WQ")
+bot.run("")
